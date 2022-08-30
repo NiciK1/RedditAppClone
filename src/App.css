@@ -1,39 +1,52 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
-}
-
-.App-header {
-  min-height: 100vh;
+.App-header{
+  height: 55px;
+  background-color: white;
+  box-shadow: 10px 0px 3px rgba(29, 29, 29, 0.014);
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  position: fixed;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
+.App-header-logo {
+  height: 55px;
+  display: flex;
+  align-items: center;
+  position: absolute;
 }
 
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.App-header-logo-img {
+  height: 32px;
+  margin-left: 20px;
+}
+
+.App-header-logo-textImg {
+  margin-left: 7px;
+
+}
+
+.App-header-search-bar{
+  border: none;
+  background-color: whitesmoke;
+  border-radius: 3px;
+  height: 30px;
+  margin-left: 33.3%;
+  width: 33.3%;
+}
+
+.App-header-search-bar-div{
+  display: flex;
+  width: 100%;
+  height: 30px;
+}
+
+.App-header-search-bar-button__submit{
+  border: none;
+  background-color: white;
+}
+
+.App-header-search-bar-button__submit:hover{
+  cursor: pointer;
 }
