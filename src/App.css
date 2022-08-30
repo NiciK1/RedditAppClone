@@ -1,4 +1,14 @@
+/* Main */
 
+.Main {
+  padding-top: 55px;
+}
+
+
+
+
+
+/* App header */
 
 .App-header{
   height: 55px;
@@ -30,16 +40,20 @@
 .App-header-search-bar{
   border: none;
   background-color: whitesmoke;
-  border-radius: 3px;
-  height: 30px;
+  border-radius: 5px;
+  height: 28px;
   margin-left: 33.3%;
   width: 33.3%;
+}
+
+.App-header-search-bar::placeholder{
+  padding-left: 15px;
 }
 
 .App-header-search-bar-div{
   display: flex;
   width: 100%;
-  height: 30px;
+  height: 28px;
 }
 
 .App-header-search-bar-button__submit{
@@ -49,4 +63,23 @@
 
 .App-header-search-bar-button__submit:hover{
   cursor: pointer;
+}
+
+/* Posts */
+
+
+.Posts{
+  display: flex;
+  width: 70%;
+  background-color: white;
+  margin: 20px;
+  box-shadow: 10px 4px 3px rgba(29, 29, 29, 0.014);
+  border-radius: 3px;
+}
+
+.Posts-like-dislike-button-div{
+  display: flex;
+  flex-flow: column nowrap;
+  width: 5%;
+
 }
