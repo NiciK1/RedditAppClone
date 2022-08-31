@@ -2,10 +2,9 @@
 
 .Main {
   padding-top: 55px;
+  display: flex;
+  flex-flow: row nowrap;
 }
-
-
-
 
 
 /* App header */
@@ -13,7 +12,7 @@
 .App-header{
   height: 55px;
   background-color: white;
-  box-shadow: 10px 0px 3px rgba(29, 29, 29, 0.014);
+  box-shadow: 3px 3px 10px 10px rgba(29, 29, 29, 0.014);
   width: 100%;
   display: flex;
   position: fixed;
@@ -46,14 +45,19 @@
   width: 33.3%;
 }
 
-.App-header-search-bar::placeholder{
-  padding-left: 15px;
+input[type=text] {
+  padding-left: 25px;
+  padding: 5px 0px 5px 25px
+}
+
+input[type=text]:focus {
+  outline: none;
 }
 
 .App-header-search-bar-div{
   display: flex;
   width: 100%;
-  height: 28px;
+  height: 38px;
 }
 
 .App-header-search-bar-button__submit{
@@ -66,20 +70,152 @@
 }
 
 /* Posts */
+.Posts-div{
+  display: flex;
+  width: 80%;
+  flex-flow: column nowrap;
+  margin: 17px;
+}
 
 
 .Posts{
   display: flex;
-  width: 70%;
+  width: 100%;
   background-color: white;
-  margin: 20px;
-  box-shadow: 10px 4px 3px rgba(29, 29, 29, 0.014);
-  border-radius: 3px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 10px 3px rgba(29, 29, 29, 0.068);
+  border-radius: 4px;
+  flex-flow: row nowrap;
+}
+
+
+.Posts:hover{
+  box-shadow: 0px 10px 15px 4px rgba(29, 29, 29, 0.089);
 }
 
 .Posts-like-dislike-button-div{
   display: flex;
   flex-flow: column nowrap;
-  width: 5%;
+  width: 50px;
+  align-items: center;
+  margin: 28px 26px;
+  float: left;
+}
 
+.Posts-like-dislike-button-count{
+  margin: 5px 7px 9px 7px;
+  color: grey;
+  font-size: 16px;
+}
+
+.Posts-TiArrowUpOutline{
+  color: grey;
+  margin-bottom: 2px;
+}
+
+.Posts-TiArrowUpOutline:hover{
+  color: rgb(0, 173, 0);
+  background-color: rgba(156, 156, 156, 0.158);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Posts-TiArrowDownOutline{
+  color: grey;
+  margin-top: 2px;
+}
+
+.Posts-TiArrowDownOutline:hover{
+  color: red;
+  background-color: rgba(156, 156, 156, 0.158);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Posts-like-dislike-button{
+  background-color: white;
+  border: none;
+}
+
+
+.Posts-main-content-div{
+  display: flex;
+  width: 94%;
+  flex-flow: column nowrap;
+  margin-right: 30px;
+}
+
+.Posts-main-content{
+  width: 100%;
+}
+
+.Posts-main-img{
+  width: 100%;
+  border-radius: 7px;
+  object-fit: cover;
+  
+}
+
+.Posts-main-title{
+  font-size: 20px;
+  margin-top: 32px;
+}
+
+.Posts-footer{
+  display: flex;
+  border-top: 1px solid rgba(128, 128, 128, 0.418);
+  margin-top: 20px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.Posts-footer-text{
+  margin-top: 20px;
+  font-size: 14px;
+  color: gray;
+}
+
+.Posts-footer-comments{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Posts-footer-comments:hover{
+  cursor: pointer;
+}
+
+.Posts-footer-comments-BiChat{
+  color: grey;
+  margin-right: 7px;
+  margin-top: 10px;
+}
+
+#Posts-footer-text-username{
+  margin-left: 33px;
+  color: blue;
+  font-weight: 600;
+}
+
+
+/* SubReddits */
+
+.Subreddits-div{
+  width: 18%;
+  margin: 17px 17px 0px 0px;
+  background-color: white;
+  box-shadow: 0 10px 10px 3px rgba(29, 29, 29, 0.068);
+  border-radius: 4px;
+}
+
+.Subreddits{
+  margin: 30px;
+}
+
+.Subreddits-main-title{
+  font-size: 30px;
+}
+
+.Subreddits-options-div{
+  background-color: white;
 }
