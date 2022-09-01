@@ -4,8 +4,6 @@ import {BiChat} from "react-icons/bi"
 
 export const Posts = () => {
 
-      
-
 
     return (
         <article className="Posts">
