@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
 import { Header } from "./containers/Header/Header"
-import { Posts } from "./features/Posts/Posts"
+import Home from './containers/Home/Home';
 import Subreddits from "./features/Subreddits/Subreddits"
+
 
 function App() {
   return (
@@ -10,14 +11,15 @@ function App() {
       <Header />
       <div className="Main">
         <div className="Posts-div">
-          <Posts />
+          <Home />
         </div>
-        <div className="Subreddits-div">
+        <aside className="Subreddits-div">
           <Subreddits />
-        </div>
+        </aside>
       </div>
     </div>
   );
 }
+
 
 export default App;

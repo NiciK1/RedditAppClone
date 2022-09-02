@@ -1,31 +1,38 @@
 import React from "react";
-import {TiArrowUpOutline, TiArrowDownOutline} from "react-icons/ti"
-import {BiChat} from "react-icons/bi"
 
-export const Posts = () => {
+import fetchPostsData from "../Fetch/fetchPostsData";
+import PostsCard from "./PostsCard";
 
+
+
+
+export const Posts = (props) => {
+  const initialValue = "pics"
+  
+  console.log(props)
+  if(props === undefined || props.props.length <= 0) {
+    fetchPostsData(initialValue)
+  } else {
+    console.log(props.props[0].data.author) //test
+    
+    props.props.map(({data: {author, downs, num_comments, title, ups}}) => {
+      
+    }) 
+    };
 
     return (
-        <article className="Posts">
-            <div className="Posts-like-dislike-button-div">
-              <button type="Posts-like-button" className="Posts-like-dislike-button"><TiArrowUpOutline size={27} className="Posts-TiArrowUpOutline"/></button>
-              <h3 className='Posts-like-dislike-button-count' >0000</h3>
-              <button type="Posts-dislike-button"  className="Posts-like-dislike-button" ><TiArrowDownOutline size={27} className="Posts-TiArrowDownOutline"/></button>
-            </div>
-            <div className = "Posts-main-content-div">
-              <div className="Posts-main-content">
-                <h3 className="Posts-main-title">Test Test Test Test Test Test Test Test </h3>
-                <img src="https://picsum.photos/200/300" alt="" className="Posts-main-img"/>
-              </div>
-              <div className= "Posts-footer">
-                <p className="Posts-footer-text" id="Posts-footer-text-username">Test Test</p>
-                <p className="Posts-footer-text" id="Posts-footer-text-time-posted">0 hours ago</p>
-                <div className="Posts-footer-comments" >
-                  <BiChat size={25} className="Posts-footer-comments-BiChat"/>
-                  <p className="Posts-footer-text" id="Posts-footer-text-amount-of-comments">Num</p>
-                </div>
-              </div>
-            </div>
-        </article>
+      <div>
+        {props.props.map(({data: {author, downs, num_comments, title, ups}}, index) => {
+          console.log(author);
+          return <PostsCard props={{
+            author,
+            downs,
+            num_comments,
+            title,
+            ups
+          }} key={index}/>
+        })}
+      </div>
     )
 }
+

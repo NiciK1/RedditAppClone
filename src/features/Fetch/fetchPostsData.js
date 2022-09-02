@@ -1,50 +1,68 @@
 
 
+// const fetchPostsData = (input) => {
+//   const responses = [];
+//   const postsPerResponses = 25;
+
+
+//   const fetchPosts = async (i) => {
+//       const response = await fetch(`https://www.reddit.com/r/${i}.json?limit=${postsPerResponses}`)
+//       const responseJSON = await response.json();
+//       responses.push(responseJSON)
+
+//       const allPosts = []
+
+//       responses.forEach(response => {
+//           allPosts.push(...response.data.children);
+//       })
+
+//       console.log(allPosts)
+//       return allPosts
+//     }
+//     return fetchPosts(input);
+// }
+
+
+
+// export default fetchPostsData
 
 
 
 
-const fetchPostsData = (input) => {
-    
-    
-    const responses = [];
-    const arrayOfData = [];
-    const postsPerResponses = 25;
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
 
-    const fetchPosts = async (i) => {
-        const response = await fetch(`https://www.reddit.com/r/${i}.json?limit=${postsPerResponses}`)
-        const responseJSON = await response.json();
-        responses.push(responseJSON)
-        parseResults(responses)
+const fetchPostsData = createAsyncThunk(
+    "redditPosts/fetchPostsData",
+    async (input, thunkAPI) => {
+        const responses = [];
+  const postsPerResponses = 25;
+
+
+  const fetchPosts = async (i) => {
+      const response = await fetch(`https://www.reddit.com/r/${i}.json?limit=${postsPerResponses}`)
+      const responseJSON = await response.json();
+      responses.push(responseJSON)
+
+      const allPosts = []
+
+      responses.forEach(response => {
+          allPosts.push(...response.data.children);
+      })
+
+      console.log(allPosts)
+      return allPosts
+        }
+    return fetchPosts(input);
     }
+    ) 
 
-    fetchPosts(input.length <= 0? "pics" : input);
-
-    const parseResults = (responses) => {
-        const allPosts = [];
-
-        responses.forEach(response => {
-        allPosts.push(...response.data.children);
-        console.log(allPosts)
-        })
-
-    
-
-        whichData(allPosts);
-
-    }
-
-    const whichData = (allPosts) => {
-        let length = allPosts.length;
-
-        allPosts.forEach(({data: {author, downs, num_comments, title, ups }}) => {
-
-        })
-    }
-
-}
+  
 
 
 
-export default fetchPostsData;
+export default fetchPostsData
+
+
+
+
