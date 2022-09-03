@@ -69,12 +69,39 @@ input[type=text]:focus {
   cursor: pointer;
 }
 
+
+
+/* Home */
+
+.HomePost-div{
+  display: flex;
+  width: 77%;
+  margin: 17px;
+  border-radius: 3px;
+}
+
+.HomeSubreddits-div {
+  width: 23%;
+  margin-right: 17px;
+  margin-top: 17px;
+  background-color: white;
+  box-shadow: 0 10px 10px 3px rgba(29, 29, 29, 0.068);
+  border-radius: 3px;
+  height: 100%;
+}
+
+
 /* Posts */
 .Posts-div{
   display: flex;
-  width: 80%;
+  width: 100%;
+
+}
+
+.Posts-all-div{
+  display: flex;
   flex-flow: column nowrap;
-  margin: 17px;
+  width: 100%;
 }
 
 
@@ -211,30 +238,56 @@ input[type=text]:focus {
 
 .Subreddits-main-title{
   font-size: 30px;
-  margin-top: 40px;
-  margin-left: 60px;
+  margin-left: 25px;
+  color: rgb(83, 83, 83);
 }
 
 .Subreddits{
-  width: 100%;
   display: flex;
   margin-bottom: 10px;
-  outline: 1px solid blue;
-  height: 90%;
+  margin: 5px;
+  flex-flow: column nowrap;
 }
 
 .Subreddit{
-  width: 100%;
   display: flex;
-  box-shadow: 0 10px 10px 3px rgba(29, 29, 29, 0.027);
-  margin: 5px;
-  border-radius: 5px;
-  height: 60px;
+  flex-flow: row nowrap;
+  margin: 10px 0px;
   align-items: center;
-  outline: 1px solid blue;
 }
 
 .Subreddits-title{
   margin: 10px;
 }
 
+.Subreddit-img-div{
+  display: flex;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 10px;
+
+}
+
+.Subreddit-img{
+  height: 30px;
+  width: 30px;
+  border-radius: 100px;
+}
+
+.Subreddit-title{
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  color: rgb(83, 83, 83);
+}
+
+.subredditSelector{
+  background-color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.subredditSelector:hover{
+  background-color: rgb(236, 236, 236);
+  cursor: pointer;
+}

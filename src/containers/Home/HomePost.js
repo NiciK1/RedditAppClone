@@ -6,13 +6,17 @@ import { selectPosts } from '../../app/Store/redditSlice'
 
 
 
-const Home = () => {
+const HomePost = () => {
     const term = useSelector(selectPosts)
     
-    
     return (
-        <Posts props={term}/> 
+        <div className='HomePost-div'>
+            <div className='Posts-div'>
+                <Posts props={term}/> 
+            </div>
+        </div>
+        
     )
 }
 
-export default Home
+export default HomePost

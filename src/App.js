@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
 import { Header } from "./containers/Header/Header"
-import Home from './containers/Home/Home';
+import HomePost from './containers/Home/HomePost';
 import Subreddits from './features/Subreddits/Subreddits';
+import SubredditHome from './containers/Home/SubredditHome';
 
 
 function App() {
@@ -10,10 +11,8 @@ function App() {
     <div className="App" >
       <Header />
       <div className="Main">
-        <div className="Posts-div">
-          <Home />
-        </div>
-          <Subreddits />
+          <HomePost />
+          <SubredditHome />
       </div>
     </div>
   );

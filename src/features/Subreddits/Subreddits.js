@@ -2,23 +2,26 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import SubredditsCard from './SubredditsCard'
 import fetchSubreddits from './fetchSubreddits'
-import { useEffect } from 'react'
-import {selectSubreddits, test} from '../../app/Store/subRedditsSlice'
 
-const Subreddits = () => {
+
+const Subreddits = (props) => {
+
+
   const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(fetchSubreddits())
-  }, [dispatch])
-
-  const subredditsToRender = useSelector(selectSubreddits)
+  
+  if(props === undefined || props.props.length <= 0 ) {
+    dispatch(fetchSubreddits)
+  }
+  console.log(props)  
 
   return (
-    <aside className='Subreddits-div'>
-      <h2 className='Subreddits-main-title'>Subreddits</h2>
-          <SubredditsCard props={subredditsToRender}/>
-    </aside>
+    <div className='Subreddits'>
+        {props.props.length !== 0 && props.props.map(({data: {banner_img, display_name}}, index) => {
+          return(
+            <button type="subredditSelector" className='subredditSelector' key={index}><SubredditsCard props={{banner_img, display_name}} key={index}/></button>
+          )
+        })}
+    </div>
   )
 }
 

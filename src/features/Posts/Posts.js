@@ -21,7 +21,7 @@ export const Posts = (props) => {
   
 
     return (
-      <div>
+      <div className="Posts-all-div">
         {props.props.length !== 0 && props.props.map(({data: {author, downs, num_comments, title, ups, url_overridden_by_dest}}, index) => {
           return <PostsCard props={{
             author,
