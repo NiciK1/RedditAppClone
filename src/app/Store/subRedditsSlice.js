@@ -1,34 +1,34 @@
 import { createSlice } from "@reduxjs/toolkit";
-import getSubreddits from "../../features/Subreddits/getSubreddits";
+import fetchSubreddits from "../../features/Subreddits/fetchSubreddits";
 
 const initialState = { 
     isLoading: false,
     hasError: false,
     selectedSubreddit: "",
-    subReddits: []
+    subreddits: []
 };
 
 
 const subRedditsSlice = createSlice({
-    name:"subreddits",
+    name:"redditSubreddits",
     initialState,
     reducers: {
         setSubReddits(state, action) {
-            state.subReddits = action.payload
+            state.subreddits = action.payload
         },
 
     },
     extraReducers: {
-        [getSubreddits.pending]: (state, action) => {
+        [fetchSubreddits.pending]: (state, action) => {
             state.isLoading = true;
             state.hasError = false
         },
-        [getSubreddits.fulfilled]: (state, action) => {
+        [fetchSubreddits.fulfilled]: (state, action) => {
             state.subreddits = action.payload;
             state.isLoading = false;
             state.hasError = false;
         },
-        [getSubreddits.rejected] : (state, action) => {
+        [fetchSubreddits.rejected] : (state, action) => {
             state.isLoading = false;
             state.hasError = true
         }
@@ -39,4 +39,4 @@ export const {setSubReddits} = subRedditsSlice.actions;
 
 export default subRedditsSlice.reducer;
 
-export const selectSubReddit = (state) => state.subReddits
+export const selectSubreddits = (state) => state.subreddit.subreddits

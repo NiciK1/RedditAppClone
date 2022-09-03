@@ -1,21 +1,24 @@
 import React from 'react'
-import SubredditsOptions from "./SubredditsOptions"
-import { useDispatch } from 'react-redux'
-import getSubreddits from './getSubreddits'
+import { useDispatch, useSelector } from 'react-redux'
+import SubredditsCard from './SubredditsCard'
+import fetchSubreddits from './fetchSubreddits'
+import { useEffect } from 'react'
+import {selectSubreddits, test} from '../../app/Store/subRedditsSlice'
 
-
-function Subreddits(props) {
+const Subreddits = () => {
   const dispatch = useDispatch()
-  if(props === undefined) {
-    dispatch(getSubreddits())
-  }
-  console.log(props)
+
+  useEffect(() => {
+    dispatch(fetchSubreddits())
+  }, [dispatch])
+
+  const subredditsToRender = useSelector(selectSubreddits)
 
   return (
-    <div className="Subreddits">
-        <h2 className='Subreddits-main-title'>Subreddits</h2>
-        
-    </div>
+    <aside className='Subreddits-div'>
+      <h2 className='Subreddits-main-title'>Subreddits</h2>
+          <SubredditsCard props={subredditsToRender}/>
+    </aside>
   )
 }
 

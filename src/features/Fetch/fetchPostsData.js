@@ -20,7 +20,7 @@ const fetchPostsData = createAsyncThunk(
       console.log(allPosts)
       return allPosts
         
-    }
+        }
     ) 
 
   

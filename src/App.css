@@ -206,35 +206,35 @@ input[type=text]:focus {
   background-color: white;
   box-shadow: 0 10px 10px 3px rgba(29, 29, 29, 0.068);
   border-radius: 4px;
-}
-
-.Subreddits{
-  margin: 20px;
-  display: flex;
   align-items: center;
-  flex-flow: column nowrap;
 }
 
 .Subreddits-main-title{
   font-size: 30px;
+  margin-top: 40px;
+  margin-left: 60px;
 }
 
-.Subreddits-options-div{
-  background-color: white;
-  display: flex;
-  flex-flow: row nowrap;
+.Subreddits{
   width: 100%;
-}
-
-.SubReddits-data-div{
   display: flex;
-  background-color: color;
-  flex-flow:row nowrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 70px;
-  outline: blue;
   margin-bottom: 10px;
+  outline: 1px solid blue;
+  height: 90%;
+}
+
+.Subreddit{
+  width: 100%;
+  display: flex;
+  box-shadow: 0 10px 10px 3px rgba(29, 29, 29, 0.027);
+  margin: 5px;
+  border-radius: 5px;
+  height: 60px;
+  align-items: center;
+  outline: 1px solid blue;
+}
+
+.Subreddits-title{
+  margin: 10px;
 }
 

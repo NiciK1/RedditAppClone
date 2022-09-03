@@ -1,9 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 
-const getSubreddits = createAsyncThunk(
-    "subreddits/getSubreddits", 
-    async (arg, thunkAPI) => {
+const fetchSubreddits = createAsyncThunk(
+    "redditSubreddits/fetchSubreddits", 
+    async (thunkAPI) => {
         const responses = [];
         const response = await fetch("https://www.reddit.com/subreddits.json");
         const json = await response.json()
@@ -22,4 +22,4 @@ const getSubreddits = createAsyncThunk(
     }
 ) 
 
-export default getSubreddits;
+export default fetchSubreddits;

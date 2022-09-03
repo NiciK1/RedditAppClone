@@ -11,7 +11,7 @@ const Home = () => {
     
     
     return (
-        <Posts props={term}/> //TODO: render Posts the first time before you click the search button 
+        <Posts props={term}/> 
     )
 }
 

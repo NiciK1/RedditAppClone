@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { Header } from "./containers/Header/Header"
 import Home from './containers/Home/Home';
-import SubredditsDiv from './features/Subreddits/SubredditsDiv';
+import Subreddits from './features/Subreddits/Subreddits';
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
         <div className="Posts-div">
           <Home />
         </div>
-          <SubredditsDiv />
+          <Subreddits />
       </div>
     </div>
   );
