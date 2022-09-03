@@ -4,8 +4,7 @@ import fetchPostsData from "../../features/Fetch/fetchPostsData";
 const initialState = {
     posts: [],
     isLoading: false,
-    searchTerm: "pics",
-    subreddit: "",
+    searchTerm: "",
     hasError: false
 }
 
@@ -21,9 +20,6 @@ const redditSlice = createSlice({
         },
         getPostsSuccessful(state) {
             state.isLoading = false
-        },
-        setSubreddit(state, action) {
-            state.subreddit = action.payload
         },
         setSearchTerm(state, action) {
             state.searchTerm = action.payload
@@ -48,7 +44,7 @@ const redditSlice = createSlice({
 
 })
 
-export const {setPosts, startGetPosts, getPostsSuccessful, subreddit, setSearchTerm} = redditSlice.actions;
+export const {setPosts, startGetPosts, getPostsSuccessful, setSearchTerm} = redditSlice.actions;
 export default redditSlice.reducer;
 
 export const selectSearchTerm = (state) => state.reddit.searchTerm;

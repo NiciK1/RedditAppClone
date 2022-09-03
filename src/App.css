@@ -209,7 +209,10 @@ input[type=text]:focus {
 }
 
 .Subreddits{
-  margin: 30px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
 }
 
 .Subreddits-main-title{
@@ -218,4 +221,20 @@ input[type=text]:focus {
 
 .Subreddits-options-div{
   background-color: white;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
 }
+
+.SubReddits-data-div{
+  display: flex;
+  background-color: color;
+  flex-flow:row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  outline: blue;
+  margin-bottom: 10px;
+}
+

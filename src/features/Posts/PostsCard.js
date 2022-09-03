@@ -1,20 +1,35 @@
 import React from 'react'
-import {TiArrowUpOutline, TiArrowDownOutline} from "react-icons/ti"
+import {TiArrowUpOutline, TiArrowDownOutline, TiArrowUpThick, TiArrowDownThick} from "react-icons/ti"
 import {BiChat} from "react-icons/bi"
+import { useState } from 'react'
+
 
 function PostsCard(props) {
+  let [ vote, setVote ] = useState(0)
+
+    //   <TiArrowUpThick size={27} className="Posts-TiArrowUpOutline"/>
+    
+    //  <TiArrowUpOutline size={27} className="Posts-TiArrowUpOutline"/>
+
+    // <TiArrowDownThick size={27} className="Posts-TiArrowDownOutline"/>
+    
+    //  <TiArrowDownOutline size={27} className="Posts-TiArrowDownOutline"/>
+
+    
+  
+
 
   return (
     <article className="Posts" >
             <div className="Posts-like-dislike-button-div">
-              <button type="Posts-like-button" className="Posts-like-dislike-button"><TiArrowUpOutline size={27} className="Posts-TiArrowUpOutline"/></button>
+              <button type="Posts-like-button" className="Posts-like-dislike-button" ><TiArrowUpOutline size={27} className="Posts-TiArrowUpOutline"/></button>
               <h3 className='Posts-like-dislike-button-count' >{props.props.ups - props.props.downs}</h3>
               <button type="Posts-dislike-button"  className="Posts-like-dislike-button" ><TiArrowDownOutline size={27} className="Posts-TiArrowDownOutline"/></button>
             </div>
             <div className = "Posts-main-content-div">
               <div className="Posts-main-content">
                 <h3 className="Posts-main-title">{props.props.title}</h3>
-                <img src="https://picsum.photos/200/300" alt="" className="Posts-main-img"/> //TODO: Get picture with url_overridden_by_dest but find out a way to see if it exists first so that the error of url_overridden_by_dest not found does not occur
+                <img src={props.props.url_overridden_by_dest} alt="" className="Posts-main-img"/> 
               </div>
               <div className= "Posts-footer">
                 <p className="Posts-footer-text" id="Posts-footer-text-username">{props.props.author}</p>
@@ -29,4 +44,7 @@ function PostsCard(props) {
   )
 }
 
+
 export default PostsCard
+
+
