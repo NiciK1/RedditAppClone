@@ -20,11 +20,11 @@ const redditSlice = createSlice({
         },
         getPostsSuccessful(state) {
             state.isLoading = false
+            state.hasError = false
         },
         setSearchTerm(state, action) {
             state.searchTerm = action.payload
-        }
-
+        },
     },
     extraReducers: {
         [fetchPostsData.pending]: (state, action) => {
@@ -49,4 +49,6 @@ export default redditSlice.reducer;
 
 export const selectSearchTerm = (state) => state.reddit.searchTerm;
 export const selectPosts = (state) => state.reddit.posts;
+export const selectIsLoading = (state) => state.reddit.isLoading
+export const selectHasError = (state) => state.reddit.hasError
 

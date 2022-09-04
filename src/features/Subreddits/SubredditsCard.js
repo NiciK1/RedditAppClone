@@ -1,6 +1,4 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import fetchSubreddits from "./fetchSubreddits";
 
 
 const SubredditsCard = (props) => {
@@ -9,7 +7,7 @@ const SubredditsCard = (props) => {
   return (
     <div className="Subreddit" >
       <div className="Subreddit-img-div">
-        <img src={props.props.banner_img} alt="" className="Subreddit-img"/>
+        <img src={props.props.icon_img} onError={(event) => event.target.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC"} alt="" className="Subreddit-img"/>
       </div>
           <p className="Subreddit-title">{props.props.display_name}</p>
     </div>

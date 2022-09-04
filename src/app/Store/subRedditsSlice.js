@@ -4,7 +4,7 @@ import fetchSubreddits from "../../features/Subreddits/fetchSubreddits";
 const initialState = { 
     isLoading: false,
     hasError: false,
-    selectedSubreddit: "",
+    selectedSubreddit: "Home ",
     subreddits: []
 };
 
@@ -16,6 +16,9 @@ const subRedditsSlice = createSlice({
         setSubReddits(state, action) {
             state.subreddits = action.payload
         },
+        selectSubReddits(state, action) {
+            state.selectedSubreddit = action.payload
+        }
 
     },
     extraReducers: {
@@ -35,8 +38,9 @@ const subRedditsSlice = createSlice({
     }
 })
 
-export const {setSubReddits} = subRedditsSlice.actions;
+export const {setSubReddits, selectSubReddits} = subRedditsSlice.actions;
 
 export default subRedditsSlice.reducer;
 
-export const selectSubreddits = (state) => state.subreddit.subreddits
+export const selectSubreddits = (state) => state.subreddit.subreddits;
+export const SubRedditsSelected = (state) => state.subreddit.selectSubReddits;

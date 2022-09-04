@@ -5,7 +5,11 @@ import { useState } from 'react'
 
 
 function PostsCard(props) {
-  let [ vote, setVote ] = useState(0)
+  const [ vote, setVote ] = useState(null)
+
+  const postsLikeDislikeCount = document.getElementsByClassName("Posts-like-dislike-button-count")
+
+  
 
     //   <TiArrowUpThick size={27} className="Posts-TiArrowUpOutline"/>
     
@@ -15,16 +19,27 @@ function PostsCard(props) {
     
     //  <TiArrowDownOutline size={27} className="Posts-TiArrowDownOutline"/>
 
-    
+    const likeDislike = (newVote) => {
+      if(newVote === vote) {
+        setVote(3)
+        postsLikeDislikeCount[props.props.index].removeAttribute("id")
+      } else if(newVote === 1) {
+        setVote(newVote)
+        postsLikeDislikeCount[props.props.index].id = "LikeDislikeCountUp"
+      } else {
+        setVote(0)
+        postsLikeDislikeCount[props.props.index].id = "LikeDislikeCountDown"
+      }
+    }
   
 
 
   return (
     <article className="Posts" >
             <div className="Posts-like-dislike-button-div">
-              <button type="Posts-like-button" className="Posts-like-dislike-button" ><TiArrowUpOutline size={27} className="Posts-TiArrowUpOutline"/></button>
+              <button type="Posts-like-button" className="Posts-like-dislike-button" onClick={() => likeDislike(1)}>{vote === 1? <TiArrowUpThick size={27} className="Posts-TiArrowUpOutline" style={{"color": "rgb(0, 173, 0)"}}/> : <TiArrowUpOutline size={27} className="Posts-TiArrowUpOutline"/>}</button>
               <h3 className='Posts-like-dislike-button-count' >{props.props.ups - props.props.downs}</h3>
-              <button type="Posts-dislike-button"  className="Posts-like-dislike-button" ><TiArrowDownOutline size={27} className="Posts-TiArrowDownOutline"/></button>
+              <button type="Posts-dislike-button"  className="Posts-like-dislike-button" onClick={() => likeDislike(0)}>{vote === 0? <TiArrowDownThick size={27} className="Posts-TiArrowDownOutline" style={{"color": "red"}}/> : <TiArrowDownOutline size={27} className="Posts-TiArrowDownOutline" />}</button>
             </div>
             <div className = "Posts-main-content-div">
               <div className="Posts-main-content">

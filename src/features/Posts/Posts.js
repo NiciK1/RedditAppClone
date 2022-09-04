@@ -29,7 +29,8 @@ export const Posts = (props) => {
             num_comments,
             title,
             ups,
-            url_overridden_by_dest
+            url_overridden_by_dest, 
+            index
           }} key={index}/>
         })}
       </div>

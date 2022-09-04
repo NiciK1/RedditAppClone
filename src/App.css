@@ -220,9 +220,18 @@ input[type=text]:focus {
 
 #Posts-footer-text-username{
   margin-left: 33px;
-  color: blue;
+  color: rgb(233, 87, 26);
   font-weight: 600;
 }
+
+#LikeDislikeCountDown{
+  color: red
+}
+
+#LikeDislikeCountUp{
+  color: rgb(0, 173, 0);
+}
+
 
 
 /* SubReddits */
@@ -247,13 +256,15 @@ input[type=text]:focus {
   margin-bottom: 10px;
   margin: 5px;
   flex-flow: column nowrap;
+  padding-left: 20px;
 }
 
 .Subreddit{
   display: flex;
   flex-flow: row nowrap;
-  margin: 10px 0px;
   align-items: center;
+  list-style-type: none;
+  height: 40px;
 }
 
 .Subreddits-title{
@@ -265,13 +276,19 @@ input[type=text]:focus {
   border-radius: 50%;
   object-fit: cover;
   margin: 10px;
-
+  overflow: hidden;
 }
 
 .Subreddit-img{
+  object-fit:cover;
+  border: rgb(83, 83, 83) solid 4px;
+  border-radius: 50%;
   height: 30px;
   width: 30px;
-  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .Subreddit-title{
@@ -285,9 +302,58 @@ input[type=text]:focus {
   background-color: white;
   border: none;
   border-radius: 4px;
+  width: 100%;
+  height: 70px;
 }
 
 .subredditSelector:hover{
   background-color: rgb(236, 236, 236);
   cursor: pointer;
+}
+
+.subreddit-li{
+  display: flex;
+  margin: 7px 0px;
+}
+
+#subredditClicked{
+  background-color: rgba(233, 88, 26, 0.397);
+  border-left: rgb(233, 87, 26) solid 7px;
+  border-radius: 0px;
+}
+
+/* HasError */
+
+.HasError-div{
+  width: 77%;
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+  margin-top: 50px;
+}
+
+.HasError-title{
+  font-size: 30px;
+  color: rgb(107, 107, 107);
+}
+
+.HasError-button{
+  background-color: rgb(240, 131, 85);
+  border: none;
+  border-radius: 7px;
+  padding: 18px 28px;
+  cursor: pointer;
+}
+
+.HasError-button-text{
+  color: white;
+  font-size: 18px;
+
+}
+
+/* IsLoading */
+
+.IsLoading-div {
+  width: 77%;
+  display: flex;
 }

@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import Subreddits from "../../features/Subreddits/Subreddits";
 import { selectSubreddits } from "../../app/Store/subRedditsSlice"
 import fetchSubreddits from "../../features/Subreddits/fetchSubreddits";
-import { useEffect } from "react";
 
 const SubredditHome = () => {
 
