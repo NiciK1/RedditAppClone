@@ -2,7 +2,7 @@ import React from 'react'
 import {TiArrowUpOutline, TiArrowDownOutline, TiArrowUpThick, TiArrowDownThick} from "react-icons/ti"
 import {BiChat} from "react-icons/bi"
 import { useState } from 'react'
-
+import moment from 'moment/moment'
 
 function PostsCard(props) {
   const [ vote, setVote ] = useState(null)
@@ -31,6 +31,9 @@ function PostsCard(props) {
         postsLikeDislikeCount[props.props.index].id = "LikeDislikeCountDown"
       }
     }
+
+
+    
   
 
 
@@ -48,7 +51,7 @@ function PostsCard(props) {
               </div>
               <div className= "Posts-footer">
                 <p className="Posts-footer-text" id="Posts-footer-text-username">{props.props.author}</p>
-                <p className="Posts-footer-text" id="Posts-footer-text-time-posted"></p>
+                <p className="Posts-footer-text" id="Posts-footer-text-time-posted">{moment.unix(props.props.created_utc).fromNow()}</p>
                 <div className="Posts-footer-comments" >
                   <BiChat size={25} className="Posts-footer-comments-BiChat"/>
                   <p className="Posts-footer-text" id="Posts-footer-text-amount-of-comments">{props.props.num_comments}</p>

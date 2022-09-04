@@ -22,14 +22,15 @@ export const Posts = (props) => {
 
     return (
       <div className="Posts-all-div">
-        {props.props.length !== 0 && props.props.map(({data: {author, downs, num_comments, title, ups, url_overridden_by_dest}}, index) => {
+        {props.props.length !== 0 && props.props.map(({data: {author, downs, num_comments, title, ups, url_overridden_by_dest, created_utc}}, index) => {
           return <PostsCard props={{
             author,
             downs,
             num_comments,
             title,
             ups,
-            url_overridden_by_dest, 
+            url_overridden_by_dest,
+            created_utc, 
             index
           }} key={index}/>
         })}

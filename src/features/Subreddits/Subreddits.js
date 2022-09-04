@@ -1,10 +1,9 @@
 import React from 'react'
-import { useDispatch, useSelector} from 'react-redux'
+import { useDispatch } from 'react-redux'
 import SubredditsCard from './SubredditsCard'
 import fetchSubreddits from './fetchSubreddits'
 import fetchPostsData from "../Fetch/fetchPostsData"
 import { useState } from 'react'
-import { useEffect } from 'react'
 
 
 

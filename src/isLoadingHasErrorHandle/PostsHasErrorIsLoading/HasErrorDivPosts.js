@@ -19,7 +19,7 @@ const HasErrorDiv = () => {
   return (
     <div className='HasError-div'>
         <h2 className='HasError-title'>No posts matching "{input}"</h2>
-        <button type="" className='HasError-button' onClick={() => handleClick()}><a className='HasError-button-text'>Return Home</a></button>
+        <button type="" className='HasError-button' onClick={() => handleClick()}><span className='HasError-button-text'>Return Home</span></button>
     </div>
   )
 }

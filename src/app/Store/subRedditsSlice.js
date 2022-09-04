@@ -44,3 +44,4 @@ export default subRedditsSlice.reducer;
 
 export const selectSubreddits = (state) => state.subreddit.subreddits;
 export const SubRedditsSelected = (state) => state.subreddit.selectSubReddits;
+export const selectIsLoading = (state) => state.reddit.isLoading
