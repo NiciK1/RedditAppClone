@@ -30,14 +30,22 @@ const Subreddits = (props) => {
       }
     }
   }
-  
+
+  const handleClick = (index, display_name) => {
+    if(index !== lastSelectedSubreddit) {
+      dispatch(fetchPostsData(display_name)); 
+      handleStylingClick(index); 
+      setLastSelectedSubreddit(index)
+    }
+  }
+
 
 
   return (
     <ul className='Subreddits'>
         {props.props.length !== 0 && props.props.map(({data: {icon_img, display_name}}, index) => {
           return(
-            <li className='subreddit-li' key={index}><button type="subredditSelector" className='subredditSelector' key={index} onClick={() => {dispatch(fetchPostsData(display_name)); handleStylingClick(index); setLastSelectedSubreddit(index)}}><SubredditsCard props={{icon_img, display_name}} key={index}/></button></li>
+            <li className='subreddit-li' key={index}><button type="subredditSelector" className='subredditSelector' key={index} onClick={() => handleClick(index, display_name)}><SubredditsCard props={{icon_img, display_name}} key={index}/></button></li>
           )
         })}
     </ul>

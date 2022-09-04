@@ -194,28 +194,33 @@ input[type=text]:focus {
   margin-top: 20px;
   justify-content: space-between;
   margin-bottom: 20px;
+  align-items: center;
+  height: 50px;
 }
 
 .Posts-footer-text{
-  margin-top: 20px;
   font-size: 14px;
   color: gray;
+  margin: 0px;
 }
 
 .Posts-footer-comments{
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 30px;
 }
 
 .Posts-footer-comments:hover{
   cursor: pointer;
+  background-color: rgba(156, 156, 156, 0.158);
+  border-radius: 5px;
 }
 
 .Posts-footer-comments-BiChat{
   color: grey;
   margin-right: 7px;
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 #Posts-footer-text-username{
@@ -354,7 +359,7 @@ input[type=text]:focus {
 /* IsLoading */
 
 .IsLoading-div {
-  width: 76%;
+  width: 77%;
   margin: 17px;
   display: flex;
   flex-flow: column nowrap;

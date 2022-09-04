@@ -7,12 +7,10 @@ import {selectHasError, selectIsLoading} from "./app/Store/redditSlice"
 import { useSelector } from 'react-redux';
 import HasErrorDiv from './isLoadingHasErrorHandle/PostsHasErrorIsLoading/HasErrorDivPosts';
 import IsLoading from './isLoadingHasErrorHandle/PostsHasErrorIsLoading/IsLoading';
-import {selectIsLoading as selectIsLoadingSub} from "./app/Store/subRedditsSlice"
 
 function App() {
   const hasError = useSelector(selectHasError)
   const isLoading = useSelector(selectIsLoading)
-  const isLoadingSub = useSelector(selectIsLoadingSub)
   return (
     <div className="App" >
       <Header />
@@ -20,7 +18,7 @@ function App() {
           {!hasError&& !isLoading? <HomePost /> : ""}
           {hasError && <HasErrorDiv />}
           {isLoading && <IsLoading />}
-          {!isLoadingSub && <SubredditHome />}
+          <SubredditHome />
       </div>
     </div>
   );

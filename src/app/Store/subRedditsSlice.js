@@ -4,7 +4,7 @@ import fetchSubreddits from "../../features/Subreddits/fetchSubreddits";
 const initialState = { 
     isLoading: false,
     hasError: false,
-    selectedSubreddit: "Home ",
+    selectedSubreddit: "Home",
     subreddits: []
 };
 

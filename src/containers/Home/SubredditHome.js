@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Subreddits from "../../features/Subreddits/Subreddits";
 import { selectSubreddits } from "../../app/Store/subRedditsSlice"
 import fetchSubreddits from "../../features/Subreddits/fetchSubreddits";
+import { useEffect } from "react";
 
 const SubredditHome = () => {
 
@@ -10,9 +11,13 @@ const SubredditHome = () => {
 
     const subredditsToRender = useSelector(selectSubreddits)
 
-    if(subredditsToRender.length === 0) {
-        dispatch(fetchSubreddits())
-    }
+
+    useEffect(() => {
+        dispatch(fetchSubreddits()); 
+    }, [dispatch])
+
+    
+
 
     return (
         <div className="HomeSubreddits-div">
