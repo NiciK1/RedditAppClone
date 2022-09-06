@@ -6,8 +6,11 @@ export const Header = () => {
     return (
         <header className="App-header">
           <div className='App-header-logo'>
-            <img src={logo} alt="" className='App-header-logo-img'/>
-            <img src={logoText} alt="" className='App-header-logo-textImg' />
+            <a href="#top" className='App-header-logo'>
+              <img src={logo} alt="" className='App-header-logo-img'/>
+              <img src={logoText} alt="" className='App-header-logo-textImg' />
+            </a>
+            
           </div>
           <SearchBar />
       </header>
