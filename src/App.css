@@ -112,9 +112,13 @@ input[type=text]:focus {
   margin-bottom: 40px;
   box-shadow: 0 10px 10px 3px rgba(29, 29, 29, 0.068);
   border-radius: 4px;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
 }
 
+.Posts-img-like-dislike{
+  display: flex;
+  width: 100%;
+}
 
 .Posts:hover{
   box-shadow: 0px 10px 15px 4px rgba(29, 29, 29, 0.089);
@@ -191,11 +195,12 @@ input[type=text]:focus {
 .Posts-footer{
   display: flex;
   border-top: 1px solid rgba(128, 128, 128, 0.418);
-  margin-top: 20px;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin: 20px 30px 20px 100px;
   align-items: center;
   height: 50px;
+
+
 }
 
 .Posts-footer-text{
@@ -432,4 +437,62 @@ input[type=text]:focus {
   margin: 28px 26px;
   float: left;
   height: 100px;
+}
+
+/* Comments */
+
+.Comments-main-div{
+  display: flex;
+  background-color: white;
+  margin-left: 100px;
+  flex-flow: column nowrap;
+  margin-bottom: 30px;
+  margin-right: 30px;
+}
+
+.Comments-top-part{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+}
+
+.Comments-body{
+  width: 100%;
+  display: flex;
+}
+
+.Comments-general-test{
+  margin: 0px;
+  margin-bottom: 13px;
+}
+
+.Comment{
+  background-color: rgb(253, 253, 253);
+  padding: 13px;
+  border-radius: 7px;
+  box-shadow: 0 5px 10px 1px rgba(29, 29, 29, 0.068);
+
+}
+
+.Comment:hover{
+  box-shadow: 0px 10px 15px 4px rgba(29, 29, 29, 0.089);
+}
+
+#Comments-Authors{
+  color: rgb(233, 87, 26);
+  font-weight: 700;
+  font-size: 17px;
+  margin-left: 10px;
+}
+
+#commentsButtonClicked{
+  color: rgb(233, 87, 26);
+}
+
+
+/* Comments loading */
+
+.Comments-loading{
+  margin-bottom: 4px;
 }

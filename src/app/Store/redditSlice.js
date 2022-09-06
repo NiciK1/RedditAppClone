@@ -39,7 +39,7 @@ const redditSlice = createSlice({
         [fetchPostsData.rejected]: (state, action) => {
             state.isLoading = false;
             state.hasError = true
-        }
+        },
     }
 
 })
