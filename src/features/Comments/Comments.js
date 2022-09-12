@@ -8,7 +8,7 @@ const Comments = (props) => {
 
     const isLoading = useSelector(selectIsLoading)
   return (
-    <div className='Comments-main-div' key={props.props.index}>
+    <div className='Comments-main-div'>
         {!isLoading && <div className='Comment'>
             <div className='Comments-top-part'>
                 <p className='Comments-general-test' id='Comments-Authors'>{props.props.author}</p>

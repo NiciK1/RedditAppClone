@@ -85,11 +85,10 @@ function PostsCard(props) {
                 </div>
             </div>
             {toggleComments && commentsToRender.map(({data: {author, body, created_utc}}, index) => {
-                return <Comments props={
+                return <Comments key={index} props={
                   {author,
                   body,
-                  created_utc, 
-                  index}
+                  created_utc}
                 }/>
             }
             )}
